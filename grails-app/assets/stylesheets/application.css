@@ -12,5 +12,7 @@
 *= require all.min
 *= require icheck-bootstrap.min
 *= require adminlte.min
+*= require OverlayScrollbars.min
+*= require datarangepicker
 
 */

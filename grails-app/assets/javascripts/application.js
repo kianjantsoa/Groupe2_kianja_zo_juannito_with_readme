@@ -6,9 +6,11 @@
 // to create separate JavaScript files as needed.
 //
 //= require jquery.min
+//= require jquery-ui.min
 //= require bootstrap.bundle.min
+//= require jquery.overlayScrollbars.min
 //= require adminlte.min
-
+//= require dashboard
 
 if (typeof jQuery !== 'undefined') {
     (function($) {
