@@ -15,7 +15,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="../../index2.html"><b>Admin</b>LTE</a>
+    <b>Lecoincoin</b>Admin
   </div>
   <!-- /.login-logo -->
   <div class="card">
@@ -24,10 +24,10 @@
 
       <form action="${postUrl ?: '/login/authenticate'}" method="POST" id="loginForm" class="cssform" autocomplete="off">
         <div class="input-group mb-3">
-          <input type="text" class="form-control" name="${usernameParameter ?: 'username'}" id="username" placeholder="Email">
+          <input type="text" class="form-control" name="${usernameParameter ?: 'username'}" id="username" placeholder="Username">
           <div class="input-group-append">
             <div class="input-group-text">
-              <span class="fas fa-envelope"></span>
+              <span class="fas fa-user"></span>
             </div>
           </div>
         </div>
