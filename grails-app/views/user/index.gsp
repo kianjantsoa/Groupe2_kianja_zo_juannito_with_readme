@@ -30,13 +30,13 @@
             <table class="table table-bordered" collection="${userList}">
                 <thead>
                 <tr>
-
                     <g:sortableColumn property="id" title="id" />
-                    <g:sortableColumn property="username" title="sername" />
+                    <g:sortableColumn property="username" title="username" />
                     <g:sortableColumn property="passwordExpired" title="Password Expired" />
                     <g:sortableColumn property="accountLocked" title="Account Locked" />
                     <g:sortableColumn property="accountExpired" title="Account Expired" />
                     <g:sortableColumn property="enabled" title="Enabled" />
+                    <th>*</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -48,6 +48,8 @@
                          <td>${user.accountLocked}</td>
                          <td>${user.accountExpired}</td>
                          <td>${user.enabled}</td>
+                         <td><a href="/user/edit/${user.id}" class="badge badge-primary">Edit</a>
+                             <a href="/user/show/${user.id}" class="badge badge-secondary">Show detail</a></td>
                      </tr>
                  </g:each>
                 </tbody>

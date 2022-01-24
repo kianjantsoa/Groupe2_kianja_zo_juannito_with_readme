@@ -2,9 +2,11 @@ package fr.itu.mbds.grails
 
 import grails.plugin.springsecurity.annotation.Secured
 import grails.validation.ValidationException
+import org.springframework.web.servlet.ModelAndView
+
 import static org.springframework.http.HttpStatus.*
 
-@Secured('ROLE_ADMIN')
+@Secured(['ROLE_ADMIN','ROLE_MODO'])
 class UserController {
 
     UserService userService
@@ -47,7 +49,9 @@ class UserController {
     }
 
     def edit(Long id) {
-        respond userService.get(id)
+        //respond userService.get(id)
+        //render(view:'/user/edit',model:[children:userService.get(id)])
+        return new ModelAndView("/user/edit", [user: userService.get(id) ])
     }
 
     def update(User user) {

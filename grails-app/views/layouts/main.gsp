@@ -49,9 +49,30 @@
                     <!-- Sidebar Menu -->
                     <nav class="mt-2">
                         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
                                 <li class="nav-item">
-                                        <i class="nav-icon fas fa-th"></i>
-                                    <g:link controller="User">${"User"}</g:link>
+                                    <a href="#" class="nav-link">
+                                        <i class="nav-icon fas fa-user"></i>
+                                        <p>
+                                            Users
+                                            <i class="right fas fa-angle-left"></i>
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="/user/create" class="nav-link">
+                                                <i class="far fa-user nav-icon"></i>
+                                                <p>Add user</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="/user/index" class="nav-link">
+                                                <i class="far fa-user nav-icon"></i>
+                                                <p>User list</p>
+                                            </a>
+                                        </li>
+
+                                    </ul>
                                 </li>
                                 <li class="nav-item">
                                     <i class="nav-icon fas fa-th"></i>
