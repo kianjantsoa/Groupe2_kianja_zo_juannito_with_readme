@@ -60,28 +60,44 @@
                                     </a>
                                     <ul class="nav nav-treeview">
                                         <li class="nav-item">
-                                            <a href="/user/create" class="nav-link">
-                                                <i class="far fa-user nav-icon"></i>
-                                                <p>Add user</p>
+                                            <a href="/user/index" class="nav-link">
+                                                <i class="fa fa-list-alt nav-icon"></i>
+                                                <p>Liste des utilisateurs</p>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="/user/index" class="nav-link">
-                                                <i class="far fa-user nav-icon"></i>
-                                                <p>User list</p>
+                                            <a href="/user/create" class="nav-link">
+                                                <i class="fa fa-plus-circle nav-icon"></i>
+                                                <p>Ajout utilisateur</p>
                                             </a>
                                         </li>
 
                                     </ul>
                                 </li>
-                                <li class="nav-item">
-                                    <i class="nav-icon fas fa-th"></i>
-                                    <g:link controller="Annonce">${"Annonces"}</g:link>
-                                </li>
-                                <li class="nav-item">
-                                    <i class="nav-icon fas fa-th"></i>
-                                    <g:link controller="Illustration">${"Illustrations"}</g:link>
-                                </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon fas fa-bullhorn"></i>
+                                    <p>
+                                        Annonces
+                                        <i class="right fas fa-angle-left"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="/annonce/index" class="nav-link">
+                                            <i class="fa fa-list nav-icon"></i>
+                                            <p>Liste des annonces</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="/annonce/create" class="nav-link">
+                                            <i class="fa fa-plus nav-icon"></i>
+                                            <p>Ajout announce</p>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
 
                         </ul>
                     </nav>
