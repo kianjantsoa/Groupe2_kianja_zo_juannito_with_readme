@@ -92,7 +92,7 @@
                                     <li class="nav-item">
                                         <a href="/annonce/create" class="nav-link">
                                             <i class="fa fa-plus nav-icon"></i>
-                                            <p>Ajout announce</p>
+                                            <p>Ajout annonce</p>
                                         </a>
                                     </li>
 

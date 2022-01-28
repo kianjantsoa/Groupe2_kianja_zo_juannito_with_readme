@@ -1,14 +1,21 @@
 package fr.itu.mbds.grails
 
+import grails.plugin.springsecurity.annotation.Authorities
 import grails.plugin.springsecurity.annotation.Secured
 import grails.validation.ValidationException
+import org.springframework.web.multipart.MultipartFile
+import org.springframework.web.multipart.MultipartHttpServletRequest
+import org.springframework.web.multipart.commons.CommonsMultipartFile
+
 import static org.springframework.http.HttpStatus.*
 
-@Secured('ROLE_ADMIN')
+
+@Secured(['ROLE_ADMIN','ROLE_MODO'])
 class AnnonceController {
 
     AnnonceService annonceService
-
+    UserService userService
+    IllustrationService illustrationService
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
@@ -21,17 +28,29 @@ class AnnonceController {
     }
 
     def create() {
+        params.author = userService.list()
         respond new Annonce(params)
     }
 
-    def save(Annonce annonce) {
+    def save(Annonce annonce ) {
         if (annonce == null) {
             notFound()
             return
         }
 
         try {
-            annonceService.save(annonce)
+           def newAnnonce =  annonceService.save(annonce)
+           def imageList = request.getMultiFileMap().get("illustration[]").toList()
+            //get upload path
+           def path  = grailsApplication.config.getProperty('illustrations.path')
+            //upload file
+           imageList.each{
+                item ->
+                    def obj = item
+                    obj.transferTo(new File(path+""+obj.filename))
+                    def illustration = new Illustration("filename" : obj.filename,"annonce" : newAnnonce.getId())
+                    illustrationService.save(illustration)
+            }
         } catch (ValidationException e) {
             respond annonce.errors, view:'create'
             return
