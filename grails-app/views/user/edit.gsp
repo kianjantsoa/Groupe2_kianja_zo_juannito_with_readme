@@ -52,13 +52,15 @@
 
         <div class="col-sm-12" >
             <form action="/user/update/${user.id}" method="post">
+                <input type="hidden" name="_method" value="PUT" id="_method" />
+                <input type="hidden" name="version" value="${user.version.value}" id="version" />
                 <div class="form-group">
                     <label for="inputPassword">Password*</label>
-                    <input type="text" class="form-control" value="${user.password}" id="inputPassword" placeholder="votre mot de passe">
+                    <input type="text" class="form-control" name="password" value="${user.password}" id="inputPassword" placeholder="votre mot de passe">
                 </div>
                 <div class="form-group">
                     <label for="inputUsername">Username*</label>
-                    <input type="text" class="form-control" id="inputUsername" value="${user.username}" placeholder="votre nom">
+                    <input type="text" class="form-control" id="inputUsername" name="username" value="${user.username}" placeholder="votre nom">
                 </div>
 
                 <div class="form-group">
@@ -74,7 +76,7 @@
                 <div class="form-group">
                     <div class="form-check">
                         <input type="hidden" name="_accountLocked" />
-                        <input type="checkbox" name="accountLocked" value="${user.accountLocked}" class="form-check-input" id="accountLocked"  />
+                        <input type="checkbox" name="accountLocked" value="${user.accountLocked}"   class="form-check-input" id="accountLocked"  />
                         <label class="form-check-label" for="passwordExpired">
                             Account Locked
                         </label>
