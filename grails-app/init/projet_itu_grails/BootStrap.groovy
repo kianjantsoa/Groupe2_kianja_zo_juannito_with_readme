@@ -12,6 +12,7 @@ class BootStrap {
 
         def roleAdmin = new Role(authority: 'ROLE_ADMIN').save()
         def roleModo = new Role(authority: 'ROLE_MODO').save()
+        def roleClient = new Role(authority: 'ROLE_CLIENT').save()
 
         def userAdmin = new User(username: "admin", password: "admin").save()
         def userModo = new User(username: "modo", password: "modo").save()
@@ -39,7 +40,7 @@ class BootStrap {
         }
 
         assert User.count == 7
-        assert Role.count == 2
+        assert Role.count == 3
         assert Annonce.count == 25
         assert Illustration.count == 75
 

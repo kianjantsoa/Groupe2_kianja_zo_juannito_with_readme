@@ -66,7 +66,12 @@
                 <div class="form-group">
                     <div class="form-check">
                         <input type="hidden" name="_passwordExpired" />
-                        <input type="checkbox" name="passwordExpired" value="${user.passwordExpired}" class="form-check-input" id="passwordExpired"  />
+                        <g:if test="${user.passwordExpired == true}">
+                            <input type="checkbox" name="passwordExpired"   checked="checked" class="form-check-input" id="passwordExpired"  />
+                        </g:if>
+                        <g:else>
+                            <input type="checkbox" name="passwordExpired"   class="form-check-input" id="passwordExpired"  />
+                        </g:else>
                         <label class="form-check-label" for="passwordExpired">
                             Password Expired
                         </label>
@@ -76,7 +81,12 @@
                 <div class="form-group">
                     <div class="form-check">
                         <input type="hidden" name="_accountLocked" />
-                        <input type="checkbox" name="accountLocked" value="${user.accountLocked}"   class="form-check-input" id="accountLocked"  />
+                        <g:if test="${user.accountLocked == true}">
+                            <input type="checkbox" name="accountLocked"   checked="checked" class="form-check-input" id="accountLocked"  />
+                        </g:if>
+                        <g:else>
+                            <input type="checkbox" name="accountLocked"      class="form-check-input" id="accountLocked"  />
+                        </g:else>
                         <label class="form-check-label" for="passwordExpired">
                             Account Locked
                         </label>
@@ -86,7 +96,12 @@
                 <div class="form-group">
                     <div class="form-check">
                         <input type="hidden" name="_accountExpired" />
-                        <input type="checkbox" name="accountExpired" value="${user.accountExpired}" class="form-check-input" id="accountExpired"  />
+                        <g:if test="${user.accountExpired == true}">
+                            <input type="checkbox" name="accountExpired"  checked="checked" class="form-check-input" id="accountExpired"  />
+                        </g:if>
+                        <g:else>
+                            <input type="checkbox" name="accountExpired"   class="form-check-input" id="accountExpired"  />
+                        </g:else>
                         <label class="form-check-label" for="accountExpired">
                             Password Expired
                         </label>
@@ -96,7 +111,12 @@
                 <div class="form-group">
                     <div class="form-check">
                         <input type="hidden" name="_enabled" />
-                        <input type="checkbox" name="enabled" checked="checked" class="form-check-input" id="enabled"  />
+                        <g:if test="${user.enabled == true}">
+                            <input type="checkbox" name="enabled" checked="checked" class="form-check-input" id="enabled"  />
+                        </g:if>
+                        <g:else>
+                            <input type="checkbox" name="enabled"  class="form-check-input" id="enabled"  />
+                        </g:else>
                         <label class="form-check-label" for="enabled">
                             Enabled
                         </label>

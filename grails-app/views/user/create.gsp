@@ -17,18 +17,19 @@
 
             <div class="col-sm-12" >
                 <form action="/user/save" method="post">
-                    <div class="form-group">
-                        <label for="inputPassword">Password*</label>
-                        <input type="text" class="form-control" name="username" id="inputPassword" placeholder="votre mot de passe">
-                    </div>
+
                     <div class="form-group">
                         <label for="inputUsername">Username*</label>
-                        <input type="text" class="form-control" id="inputUsername" name="password" placeholder="votre nom">
+                        <input type="text" class="form-control" id="inputUsername" name="username" placeholder="votre nom">
                     </div>
-
+                    <div class="form-group">
+                        <label for="inputPassword">Password*</label>
+                        <input type="text" class="form-control" name="password" id="inputPassword" placeholder="votre mot de passe">
+                    </div>
                     <div class="form-group">
                         <div class="form-check">
                             <input type="hidden" name="_passwordExpired" />
+
                             <input type="checkbox" name="passwordExpired" class="form-check-input" id="passwordExpired"  />
                             <label class="form-check-label" for="passwordExpired">
                                 Password Expired
@@ -65,14 +66,14 @@
                             </label>
                         </div>
                     </div>
-                  <!--  <div class="col-sm-4 mb-2">
+                     <div class="col-sm-4 mb-2">
                         <label class="form-check-label" for="role">Role </label>
                         <select class="custom-select" id="role" name="role">
                             <option value="1">ROLE_ADMIN</option>
                             <option value="2">ROLE_MODO</option>
                             <option value="3">ROLE_CLIENT</option>
                         </select>
-                    </div> -->
+                    </div>
                     <g:submitButton name="create" class="btn btn-primary save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
                 </form>
             </div>

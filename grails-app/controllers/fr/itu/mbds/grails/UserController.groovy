@@ -26,7 +26,7 @@ class UserController {
         respond new User(params)
     }
 
-    def save(User user) {
+    def save(User user,int role) {
         if (user == null) {
             notFound()
             return
@@ -34,6 +34,8 @@ class UserController {
 
         try {
             userService.save(user)
+            def roles = Role.get(role)
+            UserRole.create(user, roles, true)
         } catch (ValidationException e) {
             respond user.errors, view:'create'
             return
@@ -51,6 +53,7 @@ class UserController {
     def edit(Long id) {
         //respond userService.get(id)
         //render(view:'/user/edit',model:[children:userService.get(id)])
+
         return new ModelAndView("/user/edit", [user: userService.get(id) ])
     }
 
