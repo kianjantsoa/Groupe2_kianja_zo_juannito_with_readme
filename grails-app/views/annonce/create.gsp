@@ -68,7 +68,7 @@
                         <div class="input-group-prepend">
                             <div class="input-group-text">upload file</div>
                         </div>
-                        <input type="file" class="form-control"  >
+                        <input type="file" name="illustration[]" class="form-control"  >
                         <button onclick="removeimg(this)"  type="button" style="background:none; color:red;border:none"><i class="fa fa-minus-square"></i></button>
                     </div>
 
