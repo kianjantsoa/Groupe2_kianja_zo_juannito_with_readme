@@ -14,5 +14,5 @@
 *= require adminlte.min
 *= require OverlayScrollbars.min
 *= require datarangepicker
-
+*= require bundle
 */
