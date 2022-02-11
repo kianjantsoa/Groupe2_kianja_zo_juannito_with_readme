@@ -6,6 +6,10 @@ import grails.validation.ValidationException
 import org.springframework.web.multipart.MultipartFile
 import org.springframework.web.multipart.MultipartHttpServletRequest
 import org.springframework.web.multipart.commons.CommonsMultipartFile
+import org.springframework.web.multipart.support.StandardMultipartHttpServletRequest
+import org.springframework.web.servlet.ModelAndView
+
+import javax.servlet.http.Part
 
 import static org.springframework.http.HttpStatus.*
 
@@ -66,20 +70,53 @@ class AnnonceController {
     }
 
     def edit(Long id) {
-        respond annonceService.get(id)
+        return new ModelAndView("/annonce/edit", [annonce: annonceService.get(id), user:  userService.list()])
     }
 
-    def update(Annonce annonce) {
+    def update(Annonce annonce ) {
+         //annonce.price = (int) annonce.price
         if (annonce == null) {
             notFound()
             return
         }
+        def path  = grailsApplication.config.getProperty('illustrations.path')
+        List<Part> parts = new ArrayList<Part>()
+        List<Object> names = new ArrayList< >()
+        //get file from view
+        for(int i = 0 ; i< annonce.illustrations.size();i++){
+            parts.add( request.getPart("ill"+i))
+            names.add( request.getPart("ill"+i).fileItem.name)
+        }
+        //modification des anciennes illustrations
+       for(int i = 0 ; i< annonce.illustrations.size();i++){
+            def illustration = annonce.illustrations.get(i)
+            if(parts.get(i).fileItem.name.isEmpty() == false ||  parts.get(i).fileItem.name.length()!= 0){
+                def myObj = new  StandardMultipartHttpServletRequest.StandardMultipartFile(parts.get(i),parts.get(i).fileItem.name)
+                //telechargement du fichier
+                myObj.transferTo(new File(path+""+myObj.filename))
+                illustration.filename = myObj.filename
+                illustrationService.save(illustration)
+            }
+        }
+
+        //nouvelle illustration
+        def nbrOfNewImg = java.lang.Integer.parseInt(params.get("nombreNouvelleImage"))
+
+
+        for(int i = 0 ; i< nbrOfNewImg ; i++){
+            def part = request.getPart("newImg"+i)
+            def myObj = new  StandardMultipartHttpServletRequest.StandardMultipartFile(part,part.fileItem.name)
+            myObj.transferTo(new File(path+""+myObj.filename))
+            def illustration = new Illustration("filename" : myObj.filename,"annonce" : annonce.getId())
+            illustrationService.save(illustration)
+        }
+
 
         try {
             annonceService.save(annonce)
         } catch (ValidationException e) {
-            respond annonce.errors, view:'edit'
-            return
+            //respond annonce.errors , annonce: annonceService.get(annonce.getId()), user:  userService.list(), view:'edit'
+            return new ModelAndView("/annonce/edit", [ erros : annonce.errors,annonce: annonceService.get(annonce.getId()), user:  userService.list()])
         }
 
         request.withFormat {

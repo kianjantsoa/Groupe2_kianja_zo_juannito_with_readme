@@ -11,7 +11,7 @@
 //= require jquery.overlayScrollbars.min
 //= require adminlte.min
 //= require dashboard
-
+//= require bundle
 if (typeof jQuery !== 'undefined') {
     (function($) {
         $(document).ajaxStart(function() {
