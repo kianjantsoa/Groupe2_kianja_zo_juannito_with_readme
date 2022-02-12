@@ -14,6 +14,7 @@ class AnnoncesService {
                 [max: max, offset: offset])
         //return Annonce.findAllByTitleIlikeAndDescriptionIlike("%"+title+"%","%"+description+"%" )
     }
+
     def getResult(String title  , String description , Integer max , Integer offset){
         return Annonce.findAllByTitleIlikeAndDescriptionIlike("%"+title+"%","%"+description+"%").size()
     }
