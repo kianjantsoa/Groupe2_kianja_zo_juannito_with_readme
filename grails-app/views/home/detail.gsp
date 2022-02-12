@@ -13,8 +13,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Product Details | E-Shopper</title>
+    <title>Annonce Detail | Lecoincoin</title>
     <asset:stylesheet href="bootstrap.css" />
+    <asset:stylesheet href="all.min.css" />
     <asset:stylesheet href="font.css" />
     <asset:stylesheet href="front/prettyPhoto.css" />
     <asset:stylesheet href="front/price-range.css" />
@@ -111,18 +112,12 @@
                             <!-- Wrapper for slides -->
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <a href=""><img src="${resource(dir: 'images', file: "${this.annonce.illustrations.get(0).filename}")}" alt=""></a>
+                                    <g:each in="${this.annonce.illustrations}" var="illustration">
+                                        <a href=""><img src="${resource(dir: 'images', file: "${illustration.filename}")}" alt=""></a>
+                                    </g:each>
+
                                 </div>
-                                <div class="item">
-                                    <a href=""><img src="images/product-details/similar1.jpg" alt=""></a>
-                                    <a href=""><img src="images/product-details/similar2.jpg" alt=""></a>
-                                    <a href=""><img src="images/product-details/similar3.jpg" alt=""></a>
-                                </div>
-                                <div class="item">
-                                    <a href=""><img src="images/product-details/similar1.jpg" alt=""></a>
-                                    <a href=""><img src="images/product-details/similar2.jpg" alt=""></a>
-                                    <a href=""><img src="images/product-details/similar3.jpg" alt=""></a>
-                                </div>
+
 
                             </div>
 
@@ -143,12 +138,12 @@
 
                             <img src="images/product-details/rating.png" alt="" />
                             <span>
-                                <label>Quantity:</label>
+
                                 <span> ${this.annonce.price} €</span>
                             </span>
-                            <p><b>Availability:</b> In Stock</p>
-                            <p><b>Condition:</b> New</p>
-                            <p><b>Brand:</b> E-SHOPPER</p>
+                            <p><b>Description:</b> ${this.annonce.description}</p>
+                            <p><b>Auteur:</b> ${this.annonce.author.username}</p>
+
                             <a href=""><img src="images/product-details/share.png" class="share img-responsive"  alt="" /></a>
                         </div><!--/product-information-->
                     </div>
@@ -231,7 +226,7 @@
     <div class="footer-bottom">
         <div class="container">
             <div class="row">
-                <p class="pull-left">Copyright © 2013 E-SHOPPER Inc. All rights reserved.</p>
+                <p class="pull-left">Copyright © 2022 LECOINCOIN Inc. All rights reserved.</p>
                 <p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">Themeum</a></span></p>
             </div>
         </div>

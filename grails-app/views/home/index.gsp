@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Home | E-Shopper</title>
+    <title>Home | Lecoincoin</title>
     <asset:stylesheet href="bootstrap.css" />
     <asset:stylesheet href="font.css" />
     <asset:stylesheet href="front/prettyPhoto.css" />
@@ -26,11 +26,7 @@
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
      [endif] -->
-    <link rel="shortcut icon" href="images/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+
 
 </head><!--/head-->
 
@@ -109,9 +105,28 @@
 <section id="slider"><!--slider-->
     <div class="container">
         <div class="row">
-            <div class="col-offset-2 col-sm-8">
+            <div class="col-sm-2"></div>
+            <div class=" col-sm-8">
+                <div class="chose_area">
+                    <form action="/home/index" method="get">
+                    <ul class="user_info">
 
+                        <li class="single_field zip-field">
 
+                            <input type="text" name="title" placeholder="title">
+                        </li>
+                        <li class="single_field zip-field">
+
+                            <input type="text" name="description" placeholder="description">
+                        </li>
+                        <li class="single_field zip-field">
+
+                            <button type="submit" class="btn-primary">Rechercher</button>
+                        </li>
+
+                    </ul>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
@@ -143,12 +158,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="choose">
-                                <ul class="nav nav-pills nav-justified">
-                                    <li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
-                                    <li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
-                                </ul>
-                            </div>
+
                         </div>
                     </div>
                     </g:each>
@@ -233,7 +243,8 @@
     <div class="footer-bottom">
         <div class="container">
             <div class="row">
-                <p class="pull-left">Copyright © 2013 E-SHOPPER Inc. All rights reserved.</p>
+                <p class="pull-left">Copyright © 2022 LECOINCOIN Inc. All rights reserved.</p>
+                <p class="pull-left">Copyright © 2022 LECOINCOIN Inc. All rights reserved.</p>
                 <p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">Themeum</a></span></p>
             </div>
         </div>
