@@ -33,8 +33,8 @@
                 <div class="col-sm-6">
                     <div class="contactinfo">
                         <ul class="nav nav-pills">
-                            <li><a href=""><i class="fa fa-phone"></i> +2 95 01 88 821</a></li>
-                            <li><a href=""><i class="fa fa-envelope"></i> info@domain.com</a></li>
+                            <li><a href="#"><i class="fa fa-phone"></i> +261 34 88 821 12</a></li>
+                            <li><a href="#"><i class="fa fa-envelope"></i> lecoincoin@hotmail.com</a></li>
                         </ul>
                     </div>
                 </div>
@@ -58,18 +58,14 @@
             <div class="row">
                 <div class="col-md-4 clearfix">
                     <div class="logo pull-left">
-                        <a href="index.html"><img src="images/home/logo.png" alt="" /></a>
+                        <a href="#"><img src="${resource(dir: 'images', file: "grails.svg")}" alt="" /></a>
                     </div>
 
                 </div>
                 <div class="col-md-8 clearfix">
                     <div class="shop-menu clearfix pull-right">
                         <ul class="nav navbar-nav">
-                            <li><a href=""><i class="fa fa-user"></i> Account</a></li>
-                            <li><a href=""><i class="fa fa-star"></i> Wishlist</a></li>
-                            <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-                            <li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-                            <li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>
+                            <li><a href="/home/index"><i class="fa fa-user"></i> Toutes les annonces </a></li>
                         </ul>
                     </div>
                 </div>
@@ -134,15 +130,20 @@
                     <div class="col-sm-7">
                         <div class="product-information"><!--/product-information-->
                             <img src="images/product-details/new.jpg" class="newarrival" alt="" />
-                            <h2>${this.annonce.title}</h2>
+                            <h1>${this.annonce.title}</h1>
 
                             <img src="images/product-details/rating.png" alt="" />
                             <span>
-
                                 <span> ${this.annonce.price} €</span>
                             </span>
-                            <p><b>Description:</b> ${this.annonce.description}</p>
-                            <p><b>Auteur:</b> ${this.annonce.author.username}</p>
+                            <div class="form-group">
+                                <h2><b>Description :</b></h2>
+                                <p>${this.annonce.description}</p>
+                            </div>
+                            <div class="form-group">
+                                <h2>Auteur :</h2>
+                                <p>${this.annonce.author.username}</p>
+                            </div>
 
                             <a href=""><img src="images/product-details/share.png" class="share img-responsive"  alt="" /></a>
                         </div><!--/product-information-->
@@ -157,6 +158,7 @@
 
 <footer id="footer"><!--Footer-->
 
+    <!--
     <div class="footer-widget">
         <div class="container">
             <div class="row">
@@ -223,14 +225,16 @@
         </div>
     </div>
 
+
     <div class="footer-bottom">
         <div class="container">
             <div class="row">
                 <p class="pull-left">Copyright © 2022 LECOINCOIN Inc. All rights reserved.</p>
-                <p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">Themeum</a></span></p>
+                <p class="pull-right">Designed by <span><a target="_blank" href="@">LCC_IT</a></span></p>
             </div>
         </div>
     </div>
+    -->
 
 </footer><!--/Footer-->
 

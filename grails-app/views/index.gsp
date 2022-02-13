@@ -51,11 +51,11 @@
 
     <div id="content" role="main">
         <section class="row colset-2-its">
-            <h1>Welcome to Grails</h1>
+            <h1>Welcome to Our Grails</h1>
 
             <p>
-                Congratulations, you have successfully started your first Grails application! At the moment
-                this is the default page, feel free to modify it to either redirect to a controller or display
+                Congratulations, you have successfully logged to our first Grails application! At the moment
+                this is our default page, feel free to modify it to either redirect to a controller or display
                 whatever content you may choose.
             </p>
         </section>
