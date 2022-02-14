@@ -227,6 +227,8 @@ AnnonceService annonceService
 
     }
 
+
+    
     def renderThis(Object instance, String accept)
     {
         switch(accept)
